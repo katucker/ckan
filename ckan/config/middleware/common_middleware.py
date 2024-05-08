@@ -85,7 +85,7 @@ class TrackingMiddleware(object):
                 environ.get('HTTP_ACCEPT_LANGUAGE', ''),
                 environ.get('HTTP_ACCEPT_ENCODING', ''),
             ])
-            key = hashlib.md5(six.ensure_binary(key)).hexdigest()
+            key = hashlib.md5(six.ensure_binary(key),usedforsecurity=False).hexdigest()
             # store key/data here
             sql = '''INSERT INTO tracking_raw
                      (user_key, url, tracking_type)

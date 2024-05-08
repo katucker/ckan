@@ -281,7 +281,7 @@ class PackageSearchIndex(SearchIndex):
 
         # add a unique index_id to avoid conflicts
         import hashlib
-        pkg_dict['index_id'] = hashlib.md5(six.b('%s%s' % (pkg_dict['id'],config.get('ckan.site_id')))).hexdigest()
+        pkg_dict['index_id'] = hashlib.md5(six.b('%s%s' % (pkg_dict['id'],config.get('ckan.site_id'))),usedforsecurity=False).hexdigest()
 
         for item in PluginImplementations(IPackageController):
             pkg_dict = item.before_index(pkg_dict)

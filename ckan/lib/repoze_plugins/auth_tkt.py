@@ -77,7 +77,8 @@ def make_plugin(secret=None,
                 include_ip=False,
                 timeout=None,
                 reissue_time=None,
-                userid_checker=None):
+                userid_checker=None,
+                digest_algo=None):
     from repoze.who.utils import resolveDotted
 
     # ckan specifics:
@@ -101,6 +102,8 @@ def make_plugin(secret=None,
         raise ValueError(
             'SameSite=None requires the Secure attribute,'
             'please set who.secure=True')
+    if digest_algo is None and config.get(u'who.digest_algo'):
+        digest_algo = config[u'who.digest_algo']
 
     # back to repoze boilerplate
     if (secret is None and secretfile is None):
@@ -126,5 +129,6 @@ def make_plugin(secret=None,
                                      _bool(include_ip),
                                      timeout,
                                      reissue_time,
-                                     userid_checker)
+                                     userid_checker,
+                                     digest_algo)
     return plugin

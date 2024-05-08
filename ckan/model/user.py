@@ -86,7 +86,7 @@ class User(core.StatefulObjectMixin,
         e = ''
         if self.email:
             e = self.email.strip().lower().encode('utf8')
-        return md5(six.ensure_binary(e)).hexdigest()
+        return md5(six.ensure_binary(e),usedforsecurity=False).hexdigest()
 
     def get_reference_preferred_for_uri(self):
         '''Returns a reference (e.g. name, id) for this user

@@ -48,7 +48,7 @@ class TestSearchIndex(object):
         index_id = hashlib.md5(
             six.b("{0}{1}".format(
                 self.base_package_dict["id"], config["ckan.site_id"]
-            ))
+            )),usedforsecurity=False
         ).hexdigest()
 
         assert response.docs[0]["index_id"] == index_id
