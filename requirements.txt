@@ -20,7 +20,7 @@ blinker==1.7.0
     # via
     #   -r requirements.in
     #   flask
-certifi==2024.2.2
+certifi==2024.7.4
     # via
     #   -r requirements.in
     #   requests
@@ -112,7 +112,7 @@ pyyaml==6.0.1
     # via -r requirements.in
 redis==5.0.4
     # via rq
-requests==2.31.0
+requests==2.32.2
     # via
     #   -r requirements.in
     #   pysolr
@@ -144,7 +144,7 @@ typing-extensions==4.10.0
     #   sqlalchemy2-stubs
 tzlocal==5.2
     # via -r requirements.in
-urllib3==2.2.1
+urllib3==2.2.2
     # via requests
 watchdog==4.0.0
     # via werkzeug
@@ -160,7 +160,7 @@ werkzeug[watchdog]==3.0.2
     #   werkzeug
 wtforms==3.1.2
     # via flask-wtf
-zipp==3.18.1
+zipp==3.19.1
     # via importlib-metadata
 zope-interface==6.2
     # via -r requirements.in
